@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html ng-app="blocitoff">
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Blocitoff</title>
-    <link rel="stylesheet" href="/styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Blocitoff</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
+  <div class="container">
+    <div class="title">
+      <h1 class="text-center">Blocitoff</h1>
+    </div>
     <ui-view></ui-view>
-
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    
-    <!-- AngularUI Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-    
-    <!-- FireBase -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCwLH8ccvHnq0Imh_nlo-Ub2wql_7GcWdM",
-        authDomain: "blocitoff-f1dbd.firebaseapp.com",
-        databaseURL: "https://blocitoff-f1dbd.firebaseio.com",
-        projectId: "blocitoff-f1dbd",
-        storageBucket: "blocitoff-f1dbd.appspot.com",
-        messagingSenderId: "721082614098"
-      };
-      firebase.initializeApp(config);
-    </script>
-    
-    <!-- Application Files -->
-    <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/HomeCtrl.js"></script>
-    <script src="/scripts/services/Task.js"></script>
+  </div>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  
+  <!-- AngularUI Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+  
+  <!-- FireBase -->
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCwLH8ccvHnq0Imh_nlo-Ub2wql_7GcWdM",
+      authDomain: "blocitoff-f1dbd.firebaseapp.com",
+      databaseURL: "https://blocitoff-f1dbd.firebaseio.com",
+      projectId: "blocitoff-f1dbd",
+      storageBucket: "blocitoff-f1dbd.appspot.com",
+      messagingSenderId: "721082614098"
+    };
+    firebase.initializeApp(config);
+  </script>
+  
+  <!-- Application Files -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/services/Task.js"></script>
 </body>
 </html>
