@@ -6,6 +6,16 @@
         
         Task.all = tasks;
         
+        Task.add = function(task) {
+            tasks.$add({
+                description: task.description,
+                priority: task.priority,
+                createdAt: firebase.database.ServerValue.TIMESTAMP,
+                status: "active"
+            });
+        };
+            
+        
         return Task;
         
     }

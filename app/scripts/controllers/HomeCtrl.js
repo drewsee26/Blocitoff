@@ -1,6 +1,12 @@
 (function() {
     function HomeCtrl(Task) {
-        this.tasks = Task.all;
+        var vm = this;
+        
+        vm.tasks = Task.all;
+        
+        vm.addTask = function() {
+            Task.add(vm.task);
+        };
     }
 
     angular
