@@ -2,13 +2,18 @@
     <div class="view-header">
         <h2>Current Tasks</h2>
     </div>
-    <form class="create-task" ng-controller="HomeCtrl">
+    <form name="createTask" class="create-task">
         <div class="row">
             <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Enter task description" ng-model="task.description">
+                <label></label>
+                <input type="text" name="taskDescription" class="form-control" placeholder="Enter task description" ng-model="home.task.description" required/>
+                <div role="alert">
+                  <span class="error" ng-show="createTask.taskDescription.$error.required">Required!</span>
+                </div>
             </div>
             <div class="col-md-4">
-                <select id="priority" class="form-control" ng-model="task.priority">
+                <select id="priority" class="form-control" ng-model="home.task.priority">
+                    <option selected>Select priority</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -19,11 +24,15 @@
             </div>
         </div>
     </form>
-    <div class="row" ng-contoller="HomeCtrl as home">
-        <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
             <ul class="list-group">
-                <li class="list-group-item name" ng-repeat="task in home.tasks">{{ task.description }}</li>
-                <li class="list-group-item priority" ng-repeat="task in home.tasks">{{ task.priority }}</li>
+                <li class="list-group-item" ng-repeat="task in home.tasks">{{ task.description }}</li>
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="task in home.tasks">{{ task.priority }}</li>
             </ul>
         </div>
     </div>

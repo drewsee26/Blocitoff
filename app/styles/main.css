@@ -1,7 +1,3 @@
-.container {
-    width: 600px;
-}
-
 .current-tasks {
     background-color: lightgray;
     padding-left: 10px;
@@ -12,4 +8,8 @@
 
 .create-task {
     padding-bottom: 10px;
+}
+
+.list-group-item {
+    float: left;
 }

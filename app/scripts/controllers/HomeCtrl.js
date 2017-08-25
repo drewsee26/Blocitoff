@@ -6,6 +6,8 @@
         
         vm.addTask = function() {
             Task.add(vm.task);
+            this.task.description = "";
+            this.task.priority = "";
         };
     }
 
