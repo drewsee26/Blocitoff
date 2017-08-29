@@ -1,11 +1,14 @@
 <div class="current-tasks">
     <div class="view-header">
-        <h2>Current Tasks</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Current Tasks</h2>
+            </div>
+        </div>
     </div>
     <form name="createTask" class="create-task">
         <div class="row">
             <div class="col-md-6">
-                <label></label>
                 <input type="text" name="taskDescription" class="form-control" placeholder="Enter task description" ng-model="home.task.description" required/>
                 <div role="alert">
                   <span class="error" ng-show="createTask.taskDescription.$error.required">Required!</span>
@@ -13,7 +16,7 @@
             </div>
             <div class="col-md-4">
                 <select id="priority" class="form-control" ng-model="home.task.priority">
-                    <option selected>Select priority</option>
+                    <option disabled selected value>Select a priority</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -24,16 +27,20 @@
             </div>
         </div>
     </form>
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="task in home.tasks">{{ task.description }}</li>
-            </ul>
-        </div>
-        <div class="col-md-2">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="task in home.tasks">{{ task.priority }}</li>
-            </ul>
-        </div>
-    </div>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Click to Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="task in home.tasks | filter:{ status: 'active' }" ng-hide="task.hide">
+            <td>{{ task.description }}</td>
+            <td>{{ task.priority }}</td>
+            <td><i class="material-icons" ng-click="home.completeTask(task)">done</i></td>
+        </tr>
+    </tbody>
+</table>
 </div>

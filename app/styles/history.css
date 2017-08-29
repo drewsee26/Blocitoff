@@ -1,15 +1,7 @@
-.current-tasks {
+.completed-tasks {
     background-color: lightgray;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 200px;
     
-}
-
-.create-task {
-    padding-bottom: 10px;
-}
-
-.material-icons {
-    cursor: pointer;
 }

@@ -14,7 +14,11 @@
                 status: "active"
             });
         };
+        // When I click the checkmark to mark as complete, I want to 
+        // reference the task id and change the status to complete.
+        Task.complete = function(task) {
             
+        };    
         
         return Task;
         

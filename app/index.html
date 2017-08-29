@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Blocitoff</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/history.css">
 </head>
 <body>
   <div class="container">
     <div class="title">
       <h1 class="text-center">Blocitoff</h1>
+      <a ui-sref="home">Home</a> | <a ui-sref="history">Completed Tasks</a>
     </div>
     <ui-view></ui-view>
   </div>
@@ -41,6 +44,9 @@
   <!-- Application Files -->
   <script src="/scripts/app.js"></script>
   <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/controllers/HistoryCtrl.js"></script>
   <script src="/scripts/services/Task.js"></script>
+  
+  
 </body>
 </html>

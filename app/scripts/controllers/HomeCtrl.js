@@ -9,6 +9,11 @@
             this.task.description = "";
             this.task.priority = "";
         };
+        
+        vm.completeTask = function(task) {
+            task.hide = true;
+            Task.complete(vm.task);
+        };
     }
 
     angular
