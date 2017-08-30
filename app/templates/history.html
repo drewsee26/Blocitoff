@@ -1,0 +1,21 @@
+<div class="completed-tasks" ng-controller="HistoryCtrl as history">
+    <div class="view-header">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Completed Tasks</h2>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Task Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in history.tasks | filter:{ status: 'completed' }">
+                <td class="task-complete">{{ task.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

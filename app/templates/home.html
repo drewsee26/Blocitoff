@@ -1,8 +1,46 @@
-<section>
+<div class="current-tasks">
     <div class="view-header">
-        <h2>Currrent View</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Current Tasks</h2>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h3 ng-repeat="task in home.tasks">{{ task.$value }}</h3>
-    </div>
-</section>
+    <form name="createTask" class="create-task">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="taskDescription" class="form-control" placeholder="Enter task description" ng-model="home.task.description" required/>
+                <div role="alert">
+                  <span class="error" ng-show="createTask.taskDescription.$error.required">Required!</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <select id="priority" class="form-control" ng-model="home.task.priority">
+                    <option disabled selected value>Select a priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" ng-click="home.addTask()">Add</button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Task Description</th>
+                <th>Priority</th>
+                <th class="complete-column">Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in home.tasks | filter:{ status: 'active' }" ng-hide="home.expireTask(task.$id)">
+                <td>{{ task.description }}</td>
+                <td>{{ task.priority }}</td>
+                <td class="complete-column"><button type="button" class="btn btn-success" ng-click="home.completeTask(task.$id)">Done</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
