@@ -43,6 +43,28 @@ Install the project dependencies by running:
 $ npm install
 ```
 
+If you have not done so already, create a Firebase account and set up your Firebase project.
+
+- Go to https://console.firebase.google.com/
+- Create a new project
+- Name the project and choose your country/region
+- From the Overview page, click the button to 'Add Firebase to your web app'.
+- That will popup a message with some pre-filled JS code that looks like the below code snippet. Copy/paste that snippet into bottom of the body tag in your index.html file
+
+```
+<script>
+// Initialize Firebase
+    var config = {
+        apiKey: <your unique api key>,
+        authDomain: <your unique auth url>,
+        databaseURL: <your unique db url>,
+        storageBucket: <your unique bucket url>,
+        messagingSenderId: <your unique messagingSenderId>
+    };
+    firebase.initializeApp(config);
+</script>
+```
+
 ## Run the Application
 
 Run the application server:
