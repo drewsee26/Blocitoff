@@ -11,8 +11,12 @@
         };
         
         vm.completeTask = function(task) {
+            Task.complete(task);
+        };
+        
+        vm.expireTask = function(task) {
             task.hide = true;
-            Task.complete(vm.task);
+            Task.expire(task);
         };
     }
 

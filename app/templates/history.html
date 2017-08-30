@@ -6,4 +6,16 @@
             </div>
         </div>
     </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Task Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in history.tasks | filter:{ status: 'completed' }">
+                <td class="task-complete">{{ task.description }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

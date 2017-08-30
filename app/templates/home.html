@@ -17,9 +17,9 @@
             <div class="col-md-4">
                 <select id="priority" class="form-control" ng-model="home.task.priority">
                     <option disabled selected value>Select a priority</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>
             </div>
             <div class="col-md-2">
@@ -28,19 +28,19 @@
         </div>
     </form>
     <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Task</th>
-            <th>Priority</th>
-            <th>Click to Complete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="task in home.tasks | filter:{ status: 'active' }" ng-hide="task.hide">
-            <td>{{ task.description }}</td>
-            <td>{{ task.priority }}</td>
-            <td><i class="material-icons" ng-click="home.completeTask(task)">done</i></td>
-        </tr>
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th>Task Description</th>
+                <th>Priority</th>
+                <th class="complete-column">Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in home.tasks | filter:{ status: 'active' }" ng-hide="home.expireTask(task.$id)">
+                <td>{{ task.description }}</td>
+                <td>{{ task.priority }}</td>
+                <td class="complete-column"><button type="button" class="btn btn-success" ng-click="home.completeTask(task.$id)">Done</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

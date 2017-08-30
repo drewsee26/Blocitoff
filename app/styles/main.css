@@ -1,3 +1,10 @@
+@media (min-width: 992px) { 
+    .container {
+        width: 700px;
+    }
+}
+
+
 .current-tasks {
     background-color: lightgray;
     padding-left: 10px;
@@ -12,4 +19,8 @@
 
 .material-icons {
     cursor: pointer;
+}
+
+.complete-column {
+    text-align: center;
 }

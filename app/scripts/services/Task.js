@@ -14,11 +14,29 @@
                 status: "active"
             });
         };
-        // When I click the checkmark to mark as complete, I want to 
+        // When I click the button to mark as complete, I want to 
         // reference the task id and change the status to complete.
         Task.complete = function(task) {
+            var taskRef = tasks.$indexFor(task);
+            tasks[taskRef]["status"] = "completed";
+            tasks.$save(taskRef).then(function(ref) {
+                ref.key() === tasks[taskRef].$id;
+            });
+        };
+        
+        Task.expire = function(task) {
+            var taskRef = tasks.$indexFor(task);
+            var createDate = tasks[taskRef]["createdAt"];
+            var d = new Date();
+            var m = d.getTime();
             
-        };    
+            if(createDate < (m - 604,800,000)){
+                tasks[taskRef]["status"] = "completed";
+                    tasks.$save(taskRef).then(function(ref) {
+                    ref.key() === tasks[taskRef].$id;
+                });
+            }
+        };
         
         return Task;
         
